@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/root/AndroidStudioProjects/AndroidNetworking/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/jars/libs/internal_impl-20.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e40b3078e3fbd353c9f44da8df25a8fc0078209d">
+        <dex dex="/root/AndroidStudioProjects/AndroidNetworking/app/build/intermediates/pre-dexed/debug/internal_impl-20.0.0-03623383e7ee011b82540705c295b4f05f84426a.jar" />
+    </item>
+    <item
+        jar="/root/AndroidStudioProjects/AndroidNetworking/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8694693636ab36910c8100ce527c258ff3ebece0">
+        <dex dex="/root/AndroidStudioProjects/AndroidNetworking/app/build/intermediates/pre-dexed/debug/classes-2fba11f17c5858f8a72b8ec14ac05e00e28768a7.jar" />
+    </item>
+    <item
+        jar="/root/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/20.0.0/support-annotations-20.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9d9013e9ff35fc3756411e62873c363c70c638fa">
+        <dex dex="/root/AndroidStudioProjects/AndroidNetworking/app/build/intermediates/pre-dexed/debug/support-annotations-20.0.0-0e9fd6971058beaf1560b79bcf6c775d088f95b3.jar" />
+    </item>
+    <item
+        jar="/root/AndroidStudioProjects/AndroidNetworking/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f21927d22fe31889ecce94dd697a2e75b137e0ef">
+        <dex dex="/root/AndroidStudioProjects/AndroidNetworking/app/build/intermediates/pre-dexed/debug/classes-24adab73f959ee98e6f827e2e4bfd7fcff8d3bf9.jar" />
+    </item>
+
+</items>
