@@ -7,7 +7,7 @@
     >
 
     <EditText
-        style="@style/Base.TextAppearance.AppCompat.Display1"
+
         android:id="@+id/edt_log"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +16,7 @@
         android:layout_margin="@dimen/padding_small"
         />
     <EditText
-        style="@style/Base.TextAppearance.AppCompat.Display1"
+
         android:id="@+id/edt_pass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         android:id="@+id/btn_form"
         android:layout_width="@dimen/padding_mid"
         android:layout_height="wrap_content"
-        android:text="@string/txt_btn_form"
+        android:text="Ingresar"
         android:padding="@dimen/padding_small"/>
 
 

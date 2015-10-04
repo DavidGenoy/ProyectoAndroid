@@ -65,11 +65,13 @@ public class AsyncMainActivity extends ActionBarActivity implements OnClickListe
 	@Override
 	public void onClick(View v) {
 		
-		HttpAsyncTask task= new HttpAsyncTask(this
+		/*HttpAsyncTask task= new HttpAsyncTask(this
 				,"num1="+num1.getText().toString()+"&num2="+num2.getText().toString());
 		//task.execute("http://10.0.2.2:8080/PlayNote/CalculadoraServlet");
         task.execute("http://192.168.1.49/conexion.php");
-        //task.execute("http://10.0.2.2/conexion.php");
+        //task.execute("http://10.0.2.2/conexion.php");*/
+        HttpAsyncTask task = new HttpAsyncTask(this,"num1=" + num1.getText().toString() + "&num2=" + num2.getText().toString());
+        task.execute("http://192.168.0.2/conexion2.php");
 	}
 
 
@@ -79,7 +81,7 @@ public class AsyncMainActivity extends ActionBarActivity implements OnClickListe
         try {
             JSONObject jObject = new JSONObject(rta);//aqui convertimos este texto q me llega, a un objeto de tipo json.
             int result = jObject.getInt("result");
-            this.rta.setText(result);
+            this.rta.setText(result+"");
         } catch (JSONException e) {
             e.printStackTrace();
         }
