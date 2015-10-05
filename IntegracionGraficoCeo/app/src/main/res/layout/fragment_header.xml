@@ -1,0 +1,20 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.davidg.ceo.fragments.HeaderFragment"
+    android:orientation="horizontal"
+    android:weightSum="1">
+
+   <ImageView
+       android:id="@+id/img_header_pantalla"
+       android:layout_height="match_parent"
+       android:layout_width="match_parent"
+       android:src="@mipmap/ic_pantalla_ceo"
+       android:paddingTop="@dimen/padding_tiny"
+       android:gravity="center"
+       />
+
+
+
+</LinearLayout>
