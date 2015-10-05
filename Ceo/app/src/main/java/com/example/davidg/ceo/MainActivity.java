@@ -1,33 +1,44 @@
 package com.example.davidg.ceo;
 
 
+
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.davidg.ceo.fragments.FormFragment;
 import com.example.davidg.ceo.fragments.HeaderFragment;
+import com.example.davidg.ceo.fragments.MasterFragment;
 import com.example.davidg.ceo.net.HttpAsyncTask;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class MainActivity extends AppCompatActivity implements FormFragment.Validacion, HttpAsyncTask.HttpAsyncInterface {
+public class MainActivity extends AppCompatActivity implements FormFragment.Validacion, HttpAsyncTask.HttpAsyncInterface, MasterFragment.OnItemSelectedList, MasterFragment.ListMasterFragment {
     FormFragment formFragment;
     HeaderFragment headerFragment;
+    MasterFragment masterFragment;
+    ArrayAdapter<String> adapter;
+    String data[];
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         formFragment=new FormFragment();
         headerFragment=new HeaderFragment();
+        masterFragment= new MasterFragment();
         super.onCreate(savedInstanceState);
+
+        data=getResources().getStringArray(R.array.list_master);
         setContentView(R.layout.activity_main);
-        FragmentTransaction fT=getSupportFragmentManager().beginTransaction();
-        fT.replace(R.id.contenedor1,headerFragment);
-        fT.replace(R.id.contenedor2,formFragment);
-        fT.commit();
+        putFragment(R.id.contenedor1, headerFragment);
+        putFragment(R.id.contenedor2, formFragment);
+
 
     }
 
@@ -50,7 +61,10 @@ public class MainActivity extends AppCompatActivity implements FormFragment.Vali
            // this.rta.setText(result + "");
             Toast toast;
             if(result.equals("exito")){
-                toast = Toast.makeText(this,"millitos",Toast.LENGTH_SHORT);
+                toast = Toast.makeText(this,"Bienvenido",Toast.LENGTH_SHORT);
+                putFragment(R.id.contenedor2, masterFragment);
+
+
 
 
             }else
@@ -62,6 +76,25 @@ public class MainActivity extends AppCompatActivity implements FormFragment.Vali
         }
     }
 
+    public  void putFragment(int idContainer,Fragment fragment){
+        FragmentTransaction fT=getSupportFragmentManager().beginTransaction();
+        fT.replace(idContainer,fragment);
+        fT.commit();
+    }
+
+    @Override
+    public void onItemSelectedList(int pos) {
+        Toast toast= Toast.makeText(this,"seleccionaste posicion "+pos,Toast.LENGTH_SHORT);
+
+        toast.show();
+    }
+
+    @Override
+    public void listMasterFragment(ListView listView) {
+        ListView list =listView;
+        adapter=new ArrayAdapter<String>(this,R.layout.template1,R.id.txt_template1,data);
+        list.setAdapter(adapter);
+    }
 }
 
 
