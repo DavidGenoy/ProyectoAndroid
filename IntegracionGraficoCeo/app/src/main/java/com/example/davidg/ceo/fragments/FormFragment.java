@@ -11,22 +11,33 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.davidg.ceo.AppUtil;
 import com.example.davidg.ceo.R;
-
-
-
 public class FormFragment extends Fragment implements View.OnClickListener {
-
+    static final String KEY_USR = "txt_usr";
+    static final String KEY_PASS = "txt_pass";
     EditText editLog;
     EditText editPass;
 
     public  interface Validacion {
-   public   void validar(String login, String password);
-}
+        void validar(String login, String password);
+    }
+
 
     Validacion validacion;
 
+
+
+
     public FormFragment() {}
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+    }
 
     @Override
     public void onAttach(Context context) {
@@ -40,6 +51,19 @@ public class FormFragment extends Fragment implements View.OnClickListener {
         View v=inflater.inflate(R.layout.fragment_form, container, false);
          editLog= (EditText) v.findViewById(R.id.edt_log);
          editPass= (EditText) v.findViewById(R.id.edt_pass);
+
+        editLog.setText(AppUtil.usr);
+        editPass.setText(AppUtil.pass);
+
+        /*if (savedInstanceState !=null){
+
+            String usr=savedInstanceState.getString(KEY_USR);
+            String pass= savedInstanceState.getString(KEY_PASS);
+
+            editLog.setText(usr);
+            editPass.setText(pass);
+        }*/
+
         Button btn= (Button) v.findViewById(R.id.btn_form);
 
         btn.setOnClickListener(this);
@@ -55,6 +79,18 @@ public class FormFragment extends Fragment implements View.OnClickListener {
 
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        AppUtil.usr=editLog.getText().toString();
+        AppUtil.pass=editPass.getText().toString();
+    }
 
-
+    /*
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString(KEY_USR,editLog.getText().toString());
+        outState.putString(KEY_PASS,editPass.getText().toString());
+        super.onSaveInstanceState(outState);
+    }*/
 }
