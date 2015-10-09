@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -14,25 +13,15 @@ import android.widget.Toast;
 
 import com.example.davidg.ceo.fragments.FormFragment;
 import com.example.davidg.ceo.fragments.GraficoFragment;
-import com.example.davidg.ceo.fragments.HeaderFragment;
 import com.example.davidg.ceo.fragments.MasterFragment;
 import com.example.davidg.ceo.net.HttpAsyncTask;
-import com.github.mikephil.charting.charts.BarChart;
-import com.github.mikephil.charting.components.LimitLine;
-import com.github.mikephil.charting.components.YAxis;
-import com.github.mikephil.charting.data.BarData;
-import com.github.mikephil.charting.data.BarDataSet;
-import com.github.mikephil.charting.data.BarEntry;
-import com.github.mikephil.charting.utils.ColorTemplate;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-
 public class MainActivity extends AppCompatActivity implements FormFragment.Validacion, HttpAsyncTask.HttpAsyncInterface, MasterFragment.OnItemSelectedList, MasterFragment.ListMasterFragment {
     FormFragment    formFragment;
-    HeaderFragment  headerFragment;
+
     MasterFragment  masterFragment;
     GraficoFragment graficoFragment;
     ArrayAdapter<String> adapter;
@@ -43,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements FormFragment.Vali
         super.onCreate(savedInstanceState);
 
         formFragment  = new FormFragment();
-        headerFragment= new HeaderFragment();
+
         masterFragment= new MasterFragment();
         graficoFragment=new GraficoFragment();
 
@@ -57,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements FormFragment.Vali
     public void validar(String login, String password) {
 
         HttpAsyncTask task = new HttpAsyncTask(this,"user=" + login + "&pass=" + password);
-        task.execute("http://10.130.6.211/conexion.php");
+        task.execute("http://192.168.0.2/conexion.php");
 
 
     }
@@ -91,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements FormFragment.Vali
             case 0: showGrafic();
         }
 
-        toast.show();
+        //toast.show();
     }
     @Override
     public void listMasterFragment(ListView listView) {

@@ -8,12 +8,21 @@
     android:gravity="center">
 
 
-    <ImageView
-        android:id="@+id/img"
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:src="@mipmap/ic_pantalla_ceo"/>
+        >
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/login_bg"
+            android:layout_marginLeft="@dimen/padding_tiny"
+            android:layout_marginRight="@dimen/padding_tiny"
+            />
+    </android.support.v7.widget.CardView>
 
     <ListView
         android:id="@+id/list"
@@ -24,5 +33,8 @@
         android:divider="#00000000"
         android:dividerHeight="0dp"
         android:entries="@array/list_master"
+        android:layout_marginTop="@dimen/padding_small"
+        android:layout_marginLeft="@dimen/padding_tiny"
+        android:layout_marginRight="@dimen/padding_tiny"
         />
 </LinearLayout>

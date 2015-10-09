@@ -54,7 +54,7 @@ public class GraficoFragment extends Fragment implements HttpAsyncTask.HttpAsync
 
 
             HttpAsyncTask task = new HttpAsyncTask(this,"");
-            task.execute("http://10.130.6.211/dataChart.php");
+            task.execute("http://192.168.0.2/dataChart.php");
 
 
         return v;
@@ -100,10 +100,8 @@ public class GraficoFragment extends Fragment implements HttpAsyncTask.HttpAsync
                         break;
                 }
             }
-                /*dataset.addEntry(new Entry(enef,dataset.getEntryCount(),0));
-                grafica.notifyDataSetChanged();
-                grafica.invalidate();*/
-                /////////////////
+
+            ////////////////////////////////////////////////////////////////////////////////////////
             entradas = new ArrayList<>();
             entradas.add(new BarEntry(enef, 0));
             entradas.add(new BarEntry(febf, 1));
@@ -111,7 +109,6 @@ public class GraficoFragment extends Fragment implements HttpAsyncTask.HttpAsync
             entradas.add(new BarEntry(abrf, 3));
             entradas.add(new BarEntry(mayf, 4));
             entradas.add(new BarEntry(junf, 5));
-
 
             //Creamos el conjunto de datos a partir de las entradas
 
@@ -135,27 +132,26 @@ public class GraficoFragment extends Fragment implements HttpAsyncTask.HttpAsync
             /*  grafica = new BarChart(getApplicationContext());
             setContentView(grafica);*/
 
-
             grafica = (BarChart) v.findViewById(R.id.chart);
             //Incluimos los datos y etiquetas en la gráfica
-
 
             datos = new BarData(etiquetas, dataset);
 
             grafica.setData(datos);
 
             //Añadimos una descripción a la gráfica
-            grafica.setDescription("# de veces que Juan recarga el móvil");
+            grafica.setDescription("");
 
             //Aplicamos una animación al eje Y
             grafica.animateY(5000);
 
             //Incluímos una línea límite
+            /*
             linea = new LimitLine(22f);
             YAxis ejeY = grafica.getAxisLeft();
-            ejeY.addLimitLine(linea);
+            ejeY.addLimitLine(linea);*/
 
-            ////////////////
+            ///////////////////////////////////////////////////////////////////////
 
         }catch (JSONException e){
             e.printStackTrace();
