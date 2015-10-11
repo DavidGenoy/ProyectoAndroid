@@ -1,0 +1,91 @@
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.davidg.ceo.fragments.CuentaFragment"
+    android:stretchColumns="*">
+
+
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Usuario"
+
+        />
+        <EditText android:id="@+id/edit_userName"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+
+
+        />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Contrasena"
+            />
+        <EditText
+            android:id="@+id/edit_pass"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Nombre"
+            />
+        <EditText
+            android:id="@+id/edit_nombre"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Apellido"
+            />
+        <EditText
+            android:id="@+id/edit_apellido"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Direccion"
+            />
+        <EditText
+            android:id="@+id/edit_direccion"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+
+            />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Telefono"
+            />
+        <EditText
+            android:id="@+id/edit_telefono"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+
+            />
+    </TableRow>
+
+</TableLayout>

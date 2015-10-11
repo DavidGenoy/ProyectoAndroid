@@ -1,0 +1,87 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.davidg.ceo.fragments.ConsumoFragment"
+    android:orientation="vertical">
+
+    <TableRow
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Consumo (KW/horas):"
+            android:layout_marginTop="@dimen/padding_small"
+            android:layout_marginRight="@dimen/padding_small"
+            android:layout_marginLeft="@dimen/padding_tiny"
+            />
+        <TextView
+            android:id="@+id/txt_consumoKw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/padding_small"
+            android:text="aajasjfl"
+             />
+
+        <Button
+            android:id="@+id/btnConsumo"
+            android:layout_marginTop="@dimen/padding_tiny"
+            android:layout_marginLeft="@dimen/padding_small"
+            android:layout_marginRight="@dimen/padding_small"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Actualizar"
+            android:textSize="@dimen/btn_size"/>
+    </TableRow>
+
+    <TableRow
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Consumo ($):"
+            android:layout_marginTop="@dimen/padding_small"
+            android:layout_marginRight="@dimen/padding_small"
+            android:layout_marginLeft="@dimen/padding_tiny"
+            />
+        <TextView
+            android:id="@+id/txt_consumoPeso"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/padding_small"
+            android:text="aajasjfl"
+             />
+    </TableRow>
+
+    <TableRow
+            android:layout_gravity="center"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:layout_width="match_parent">
+        <FrameLayout
+
+            android:id="@+id/frameConsumo"
+            android:layout_span="2"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            <com.github.mikephil.charting.charts.BarChart
+
+                android:layout_span="2"
+                android:id="@+id/chartConsumo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+
+
+    </TableRow>
+
+
+
+
+</TableLayout>

@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.davidg.ceo.fragments.ConsumoFragment;
+import com.example.davidg.ceo.fragments.CuentaFragment;
 import com.example.davidg.ceo.fragments.FormFragment;
 import com.example.davidg.ceo.fragments.GraficoFragment;
 import com.example.davidg.ceo.fragments.MasterFragment;
@@ -24,17 +26,22 @@ public class MainActivity extends AppCompatActivity implements FormFragment.Vali
 
     MasterFragment  masterFragment;
     GraficoFragment graficoFragment;
+    CuentaFragment cuentaFragment;
+    ConsumoFragment consumoFragment;
     ArrayAdapter<String> adapter;
     String data[];
+    String user;
+    String pass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         formFragment  = new FormFragment();
-
         masterFragment= new MasterFragment();
         graficoFragment=new GraficoFragment();
+        cuentaFragment= new CuentaFragment();
+        consumoFragment= new ConsumoFragment();
 
         data=getResources().getStringArray(R.array.list_master);
         setContentView(R.layout.activity_main);
@@ -44,9 +51,11 @@ public class MainActivity extends AppCompatActivity implements FormFragment.Vali
     }
     @Override
     public void validar(String login, String password) {
+        user=login;
+        pass=password;
 
         HttpAsyncTask task = new HttpAsyncTask(this,"user=" + login + "&pass=" + password);
-        task.execute("http://192.168.0.2/conexion.php");
+        task.execute("http://192.168.0.4/conexion.php");
 
 
     }
@@ -77,11 +86,17 @@ public class MainActivity extends AppCompatActivity implements FormFragment.Vali
     public void onItemSelectedList(int pos) {
         Toast toast= Toast.makeText(this, "seleccionaste posicion " + pos, Toast.LENGTH_SHORT);
         switch (pos){
-            case 0: showGrafic();
+            case 0: showGrafic(); break;
+            case 1: showConsum(); break;
+            case 2: showAccount();break;
         }
 
         //toast.show();
     }
+
+
+
+
     @Override
     public void listMasterFragment(ListView listView) {
         ListView list =listView;
@@ -96,6 +111,16 @@ public class MainActivity extends AppCompatActivity implements FormFragment.Vali
         putFragment(R.id.contenedor2,graficoFragment);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+    }
+    private void showConsum() {
+        consumoFragment.init(user);
+        putFragment(R.id.contenedor2, consumoFragment);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    private void showAccount() {
+        cuentaFragment.init(user,pass);
+        putFragment(R.id.contenedor2,cuentaFragment);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 

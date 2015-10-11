@@ -5,4 +5,5 @@
     <dimen name="padding_small">30dp</dimen>
     <dimen name="padding_mid">300dp</dimen>
     <dimen name="padding_tiny">10dp</dimen>
+    <dimen name="btn_size">10sp</dimen>
 </resources>

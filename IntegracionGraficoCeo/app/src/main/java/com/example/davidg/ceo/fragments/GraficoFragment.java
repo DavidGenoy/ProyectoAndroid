@@ -54,7 +54,7 @@ public class GraficoFragment extends Fragment implements HttpAsyncTask.HttpAsync
 
 
             HttpAsyncTask task = new HttpAsyncTask(this,"");
-            task.execute("http://192.168.0.2/dataChart.php");
+            task.execute("http://192.168.0.4/dataChart.php");
 
 
         return v;
@@ -144,6 +144,7 @@ public class GraficoFragment extends Fragment implements HttpAsyncTask.HttpAsync
 
             //Aplicamos una animación al eje Y
             grafica.animateY(5000);
+            grafica.animateX(3000);
 
             //Incluímos una línea límite
             /*
